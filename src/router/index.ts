@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'Portal',
     component: () => import('@/views/Portal.vue'),
-    meta: { title: '防爆产业数据中心 - 智慧防爆产业生态平台' }
+    meta: { title: '防爆产业数据中心 - 智慧产业生态平台' }
   },
   
   // 登录页
@@ -31,7 +31,7 @@ const routes: RouteRecordRaw[] = [
         path: '/app/dashboard',
         name: 'Dashboard',
         component: () => import('@/views/Dashboard.vue'),
-        meta: { title: '防爆数据概览' }
+        meta: { title: '数据概览' }
       },
       
       // V1.0 资源库模块
@@ -39,54 +39,54 @@ const routes: RouteRecordRaw[] = [
         path: '/app/resources',
         name: 'Resources',
         redirect: '/app/resources/enterprises',
-        meta: { title: '防爆资源库' },
+        meta: { title: '资源库' },
         children: [
           // 企业库
           {
             path: '/app/resources/enterprises',
             name: 'EnterpriseList',
             component: () => import('@/views/resources/EnterpriseList.vue'),
-            meta: { title: '防爆企业库' }
+            meta: { title: '企业库' }
           },
           {
             path: '/app/resources/enterprises/:id',
             name: 'EnterpriseDetail',
             component: () => import('@/views/resources/EnterpriseDetail.vue'),
-            meta: { title: '防爆企业详情' }
+            meta: { title: '企业详情' }
           },
           // 需求库
           {
             path: '/app/resources/demands',
             name: 'DemandList',
             component: () => import('@/views/resources/DemandList.vue'),
-            meta: { title: '防爆需求库' }
+            meta: { title: '需求库' }
           },
           {
             path: '/app/resources/demands/:id',
             name: 'DemandDetail',
             component: () => import('@/views/resources/DemandDetail.vue'),
-            meta: { title: '防爆需求详情' }
+            meta: { title: '需求详情' }
           },
           // 产品库
           {
             path: '/app/resources/products',
             name: 'ProductList',
             component: () => import('@/views/resources/ProductList.vue'),
-            meta: { title: '防爆产品库' }
+            meta: { title: '产品库' }
           },
           // 解决方案库
           {
             path: '/app/resources/solutions',
             name: 'SolutionList',
             component: () => import('@/views/resources/SolutionList.vue'),
-            meta: { title: '防爆解决方案库' }
+            meta: { title: '解决方案库' }
           },
           // 专家库
           {
             path: '/app/resources/experts',
             name: 'ExpertList',
             component: () => import('@/views/resources/ExpertList.vue'),
-            meta: { title: '防爆专家库' }
+            meta: { title: '专家库' }
           }
         ]
       },
@@ -95,41 +95,41 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/app/insights',
         name: 'Insights',
-        meta: { title: '防爆战略洞察' },
+        meta: { title: '战略洞察' },
         children: [
           // 产业链概览
           {
             path: '/app/insights/industry-overview',
             name: 'IndustryOverview',
             component: () => import('@/views/insights/IndustryOverview.vue'),
-            meta: { title: '防爆产业链概览' }
+            meta: { title: '产业链概览' }
           },
           // 产业链地图
           {
             path: '/app/insights/industry-map',
             name: 'IndustryMap',
             component: () => import('@/views/insights/IndustryMap.vue'),
-            meta: { title: '防爆产业链地图' }
+            meta: { title: '产业链地图' }
           },
           // 产业链图谱
           {
             path: '/app/insights/industry-chain',
             name: 'IndustryChainDefault',
             component: () => import('@/views/insights/IndustryChain.vue'),
-            meta: { title: '防爆产业链图谱' }
+            meta: { title: '产业链图谱' }
           },
           {
             path: '/app/insights/industry-chain/:industry',
             name: 'IndustryChain',
             component: () => import('@/views/insights/IndustryChain.vue'),
-            meta: { title: '防爆产业链图谱' }
+            meta: { title: '产业链图谱' }
           },
           // 企业地图
           {
             path: '/app/insights/enterprise-map',
             name: 'EnterpriseMap',
             component: () => import('@/views/insights/EnterpriseMap.vue'),
-            meta: { title: '防爆企业地图' }
+            meta: { title: '企业地图' }
           }
         ]
       },
@@ -138,14 +138,14 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/app/opportunities',
         name: 'Opportunities',
-        meta: { title: '防爆机会引擎' },
+        meta: { title: '机会引擎' },
         children: [
           // 供需地图
           {
             path: '/app/opportunities/supply-demand-map',
             name: 'SupplyDemandMap',
             component: () => import('@/views/opportunities/SupplyDemandMap.vue'),
-            meta: { title: '防爆供需地图' }
+            meta: { title: '供需地图' }
           }
         ]
       },

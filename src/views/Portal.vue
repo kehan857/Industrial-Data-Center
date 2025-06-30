@@ -17,11 +17,11 @@
         </div>
         
         <div class="nav-menu">
-          <a href="#resources" class="nav-link">防爆设备库</a>
-          <a href="#projects" class="nav-link">防爆项目库</a>
-          <a href="#solutions" class="nav-link">防爆方案库</a>
-          <a href="#experts" class="nav-link">防爆专家库</a>
-          <a href="#talents" class="nav-link">防爆人才库</a>
+          <a href="#resources" class="nav-link">资源库</a>
+          <a href="#projects" class="nav-link">招标项目库</a>
+          <a href="#solutions" class="nav-link">方案库</a>
+          <a href="#experts" class="nav-link">专家库</a>
+          <a href="#talents" class="nav-link">人才库</a>
         </div>
         
         <div class="nav-actions">
@@ -35,11 +35,11 @@
     <section class="hero-section">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">防爆工业资源库</h1>
-          <p class="hero-subtitle">防爆产业数据中心，专业防爆设备数据海洋，为企业为个人解决防爆难题</p>
+          <h1 class="hero-title">工业资源库</h1>
+          <p class="hero-subtitle">防爆产业数据中心，数据的海洋，为企业为个人解决问题突破困局</p>
           <p class="hero-description">
-            提供防爆电气、防爆仪表、防爆照明、防爆通风、防爆控制系统等专业防爆设备数据<br>
-            为石油化工、煤矿、制药等危险环境企业提供全方位防爆解决方案，确保生产安全
+            提供制造业、新能源、数字经济、化工、有色金属、加工制造等行业的产品数据<br>
+            为企业、个人提供全方位数据，开启机遇挑战、人才储备、助力其快速发展
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@
           </div>
           <div class="stat-item">
             <span class="stat-number">{{ stats.resources.toLocaleString() }}份</span>
-            <span class="stat-label">防爆数据资源</span>
+            <span class="stat-label">数据资源</span>
           </div>
         </div>
       </div>
@@ -90,8 +90,8 @@
     <!-- 数据库分类 -->
     <section class="database-categories">
       <div class="section-container">
-        <h2 class="section-title">防爆数据库分类</h2>
-        <p class="section-subtitle">防爆产业数据中心提供多种防爆数据分类库，满足企业、个人不同层面，多方位防爆需求</p>
+        <h2 class="section-title">数据库分类</h2>
+        <p class="section-subtitle">防爆产业数据中心提供多种数据分类库，满足企业、个人不同层面，多方位需求</p>
         
         <div class="category-tabs">
           <button 
@@ -155,7 +155,7 @@
     <section class="partners">
       <div class="section-container">
         <h2 class="section-title">合作伙伴</h2>
-        <p class="section-subtitle">致力于帮助合作伙伴构建基于防爆产业数据中心的全套防爆数据方案</p>
+        <p class="section-subtitle">致力于帮助合作伙伴构建基于防爆产业数据中心的全套数据方案</p>
         
         <div class="partners-grid">
           <div v-for="partner in partners" :key="partner.id" class="partner-item">
@@ -189,7 +189,7 @@
           <div class="footer-section">
             <h4 class="footer-title">友情链接</h4>
             <div class="footer-links">
-              <a href="#" class="footer-link">防爆技术协会</a>
+              <a href="#" class="footer-link">工业互联网风向标</a>
               <a href="#" class="footer-link">在线咨询</a>
             </div>
           </div>
@@ -197,7 +197,7 @@
         
         <div class="footer-bottom">
           <p class="copyright">
-            Copyright©2008-2025 Explosion-proof Industrial Data Center Corporation， All Rights Reserved<br>
+            Copyright©2008-2025 Industrial Data Center Corporation， All Rights Reserved<br>
             地址：中国·北京市海淀区中关村科技园区 电话：400-888-6725 京ICP备11002812号
           </p>
         </div>
@@ -229,21 +229,21 @@ const stats = ref({
   resources: 347110
 })
 
-// 数据库分类（防爆相关）
+// 数据库分类
 const categories = ref([
   {
     id: 1,
-    name: '防爆设备库',
-    description: '防爆产业数据中心从不同防爆等级收录各类防爆设备数据，用户可以了解防爆领域的不同应用场景，以及各个场景下对应的防爆要求及解决方法。为企业解决防爆难题、确保安全生产，为个人提供海量防爆技术数据。',
+    name: '工业资源库',
+    description: '防爆产业数据中心从不同层级收录不同行业的数据，用户可以了解工业领域的不同场景，以及各个场景下对应的问题及解决方法。为企业解决难题、突破困局，使企业得到飞速发展，为个人提供海量数据，解决工作、学习、生活中遇到的问题。',
     items: [
-      { id: 1, title: '防爆电气', description: '防爆开关、防爆灯具等', icon: '⚡' },
-      { id: 2, title: '防爆仪表', description: '防爆压力表、温度计等', icon: '📊' },
-      { id: 3, title: '防爆照明', description: '防爆灯具、应急照明等', icon: '💡' },
-      { id: 4, title: '防爆通风', description: '防爆风机、通风设备等', icon: '🌪️' },
-      { id: 5, title: '防爆阀门', description: '防爆球阀、闸阀等', icon: '🔧' },
-      { id: 6, title: '防爆控制', description: '防爆控制箱、操作柱等', icon: '🎛️' },
-      { id: 7, title: '防爆工具', description: '防爆扳手、防爆锤等', icon: '🔨' },
-      { id: 8, title: '防爆监控', description: '防爆摄像头、监控系统等', icon: '📹' }
+      { id: 1, title: '安全行业', description: '安全设备与解决方案', icon: '🛡️' },
+      { id: 2, title: '电力', description: '电力设备与技术', icon: '⚡' },
+      { id: 3, title: '水利', description: '水利工程与设备', icon: '💧' },
+      { id: 4, title: '能源', description: '新能源技术与设备', icon: '🔋' },
+      { id: 5, title: '通用机械', description: '通用机械设备', icon: '⚙️' },
+      { id: 6, title: '建筑材料', description: '建筑材料与技术', icon: '🏗️' },
+      { id: 7, title: '泵阀', description: '泵阀设备与技术', icon: '🔧' },
+      { id: 8, title: '电气', description: '电气设备与系统', icon: '🔌' }
     ],
     stats: {
       total: 347110,
@@ -254,17 +254,17 @@ const categories = ref([
   },
   {
     id: 2,
-    name: '防爆项目库',
-    description: '防爆项目库汇集石油化工、煤矿、制药等危险环境项目信息，为防爆设备企业提供更多商业机遇，是推动防爆产业发展的重要载体。',
+    name: '招标项目库',
+    description: '招标项目库可为企业提供更多的机遇，是带动企业项目实施、促进企业发展的重要载体，关系着企业发展全局。因此，对于实现企业经济发展预期，增强企业发展信心，具有不可估量的重要意义。',
     items: [
-      { id: 1, title: '石油化工', description: '炼油厂防爆改造项目', icon: '🛢️' },
-      { id: 2, title: '煤矿防爆', description: '煤矿井下防爆设备项目', icon: '⚫' },
-      { id: 3, title: '制药防爆', description: '制药车间防爆系统项目', icon: '💊' },
-      { id: 4, title: '天然气', description: '天然气站防爆工程', icon: '🔥' },
-      { id: 5, title: '粉尘防爆', description: '粉尘作业防爆改造', icon: '💨' },
-      { id: 6, title: '海洋平台', description: '海上石油平台防爆', icon: '🌊' },
-      { id: 7, title: '危化仓储', description: '危化品仓库防爆系统', icon: '🏭' },
-      { id: 8, title: '防爆检测', description: '防爆设备检测认证', icon: '🔍' }
+      { id: 1, title: '煤炭化工', description: '煤炭化工项目', icon: '⚫' },
+      { id: 2, title: '电力', description: '电力工程项目', icon: '⚡' },
+      { id: 3, title: '石油化工', description: '石化工程项目', icon: '🛢️' },
+      { id: 4, title: '金融', description: '金融服务项目', icon: '💰' },
+      { id: 5, title: '航空航天', description: '航空航天项目', icon: '🚀' },
+      { id: 6, title: '建筑', description: '建筑工程项目', icon: '🏢' },
+      { id: 7, title: '有色', description: '有色金属项目', icon: '🔩' },
+      { id: 8, title: '交通', description: '交通运输项目', icon: '🚗' }
     ],
     stats: {
       total: 188234,
@@ -275,17 +275,17 @@ const categories = ref([
   },
   {
     id: 3,
-    name: '防爆方案库',
-    description: '聚焦防爆技术创新，智能防爆系统，防爆物联网，防爆大数据，防爆人工智能，提供海量防爆解决方案',
+    name: '方案库',
+    description: '聚焦数字化转型，智能工厂，工业互联网，物联网，大数据，人工智能，生产工艺，机理模型，科技创新，提供海量行业解决方案',
     items: [
-      { id: 1, title: '智能防爆系统', description: '智能化防爆解决方案', icon: '🤖' },
-      { id: 2, title: '防爆监控方案', description: '防爆环境监控系统', icon: '📊' },
-      { id: 3, title: '防爆物联网', description: '防爆设备物联网方案', icon: '🌐' },
-      { id: 4, title: '防爆检测方案', description: '防爆设备检测系统', icon: '🔍' },
-      { id: 5, title: '防爆认证服务', description: '防爆产品认证方案', icon: '📋' },
-      { id: 6, title: '防爆培训方案', description: '防爆技术培训服务', icon: '📚' },
-      { id: 7, title: '防爆维护方案', description: '防爆设备维护服务', icon: '🔧' },
-      { id: 8, title: '防爆咨询方案', description: '防爆技术咨询服务', icon: '💡' }
+      { id: 1, title: 'SAAS软件超市', description: '云端软件解决方案', icon: '☁️' },
+      { id: 2, title: 'SCADA系统', description: '工业自动化系统', icon: '📊' },
+      { id: 3, title: '安全云平台', description: '工业安全解决方案', icon: '🔒' },
+      { id: 4, title: '营销系统', description: '互联网营销解决方案', icon: '📈' },
+      { id: 5, title: '制造执行系统', description: 'MES制造执行系统', icon: '🏭' },
+      { id: 6, title: '混合云架构', description: '云架构设计方案', icon: '🌐' },
+      { id: 7, title: '办公平台', description: '企业办公解决方案', icon: '💼' },
+      { id: 8, title: 'GIS软件', description: '地理信息系统', icon: '🗺️' }
     ],
     stats: {
       total: 130452,
@@ -296,13 +296,13 @@ const categories = ref([
   },
   {
     id: 4,
-    name: '防爆专家库',
-    description: '防爆专家库汇集高层次防爆技术专家、防爆产品专家、防爆安全顾问等权威专家资源，帮助企业解决防爆技术难题。',
+    name: '专家库',
+    description: '专家库是覆盖高层次、跨行业、跨领域等不同维度的具有权威性和代表性的资源库，包含资深技术专家、资深产品专家、专业咨询顾问、财务顾问等，帮助企业解决研发、管理、推广过程中的问题。',
     items: [
-      { id: 1, title: '防爆技术专家', description: '资深防爆技术专家', icon: '👨‍🔬' },
-      { id: 2, title: '防爆产品专家', description: '防爆产品设计专家', icon: '👨‍🔧' },
-      { id: 3, title: '防爆安全顾问', description: '防爆安全咨询顾问', icon: '👨‍💼' },
-      { id: 4, title: '防爆认证专家', description: '防爆认证检测专家', icon: '👨‍⚖️' }
+      { id: 1, title: '技术专家', description: '资深技术专家资源', icon: '👨‍💻' },
+      { id: 2, title: '产品专家', description: '产品设计专家', icon: '👨‍🔬' },
+      { id: 3, title: '咨询顾问', description: '专业咨询顾问', icon: '👨‍💼' },
+      { id: 4, title: '财务顾问', description: '财务管理专家', icon: '👨‍💰' }
     ],
     stats: {
       total: 22783,
@@ -313,13 +313,13 @@ const categories = ref([
   },
   {
     id: 5,
-    name: '防爆人才库',
-    description: '防爆人才库是展示防爆行业人才的专业平台，致力于为防爆企业搜寻专业人才，为防爆技术人员提供职业发展机会。',
+    name: '人才库',
+    description: '人才库是展示企业员工或个人能力的"人才池"，致力于为企业搜寻、招募最优秀的人才，同时帮助个人提供更好的职业发展机会，是招聘发布、人才招聘一站式互联网免费平台。',
     items: [
-      { id: 1, title: '防爆工程师', description: '防爆设计工程师', icon: '👨‍💻' },
-      { id: 2, title: '防爆技术员', description: '防爆设备技术员', icon: '👨‍🔧' },
-      { id: 3, title: '防爆销售', description: '防爆产品销售人员', icon: '👨‍💼' },
-      { id: 4, title: '防爆检测员', description: '防爆设备检测人员', icon: '👨‍🔬' }
+      { id: 1, title: '市场/销售', description: '市场营销人才', icon: '📊' },
+      { id: 2, title: '技术/研发', description: '技术研发人才', icon: '💻' },
+      { id: 3, title: '管理/运营', description: '管理运营人才', icon: '👔' },
+      { id: 4, title: '生产/制造', description: '生产制造人才', icon: '🏭' }
     ],
     stats: {
       total: 3384,
@@ -332,16 +332,16 @@ const categories = ref([
 
 // 合作伙伴
 const partners = ref([
-  { id: 1, name: '中石化' },
-  { id: 2, name: '中石油' },
-  { id: 3, name: '中海油' },
-  { id: 4, name: '国家能源集团' },
-  { id: 5, name: '中煤集团' },
-  { id: 6, name: '华能集团' },
-  { id: 7, name: '防爆电气研究所' },
-  { id: 8, name: '安全生产科学院' },
-  { id: 9, name: '防爆技术协会' },
-  { id: 10, name: '工业安全联盟' }
+  { id: 1, name: '中国电信' },
+  { id: 2, name: '中国移动' },
+  { id: 3, name: '中国联通' },
+  { id: 4, name: '中国燃气' },
+  { id: 5, name: '中国海油' },
+  { id: 6, name: '延长石油' },
+  { id: 7, name: '清华大学' },
+  { id: 8, name: '北京理工大学' },
+  { id: 9, name: '中科院' },
+  { id: 10, name: '航天科工' }
 ])
 
 // 方法
@@ -358,7 +358,7 @@ const handleViewMore = () => {
   contactModal.value = {
     visible: true,
     title: '获取更多优惠信息',
-    description: '请留下您的联系方式，我们将为您提供更多防爆产品优惠政策和服务详情。'
+    description: '请留下您的联系方式，我们将为您提供更多优惠政策和服务详情。'
   }
 }
 
@@ -367,7 +367,7 @@ const handleLearnMore = (category: any) => {
   contactModal.value = {
     visible: true,
     title: `了解更多${category.name}信息`,
-    description: `您对${category.name}感兴趣，请留下您的联系方式，我们将为您提供更详细的防爆资料和专业咨询服务。`
+    description: `您对${category.name}感兴趣，请留下您的联系方式，我们将为您提供更详细的资料和专业咨询服务。`
   }
 }
 
@@ -376,7 +376,7 @@ const handleItemClick = (item: any) => {
   contactModal.value = {
     visible: true,
     title: `${item.title} - 详细咨询`,
-    description: `您对${item.title}感兴趣，请留下您的联系方式，我们将安排防爆专业顾问为您提供详细的解决方案。`
+    description: `您对${item.title}感兴趣，请留下您的联系方式，我们将安排专业顾问为您提供详细的解决方案。`
   }
 }
 

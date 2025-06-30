@@ -41,7 +41,7 @@
           </div>
           <transition name="logo-text">
             <div v-show="!collapsed" class="logo-text">
-              <div class="logo-title">产业数据中心</div>
+              <div class="logo-title">防爆产业数据中心</div>
               <div class="logo-subtitle">Industry Data Center</div>
             </div>
           </transition>
