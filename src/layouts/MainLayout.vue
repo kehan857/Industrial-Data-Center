@@ -224,7 +224,9 @@ import {
   TeamOutlined,
   SafetyOutlined,
   DownOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  HomeOutlined,
+  LoginOutlined
 } from '@ant-design/icons-vue'
 
 const route = useRoute()
@@ -245,31 +247,93 @@ interface MenuConfig {
 // 菜单配置
 const menuConfig: Record<string, MenuConfig> = {
   '/dashboard': { title: '数据概览', icon: 'DashboardOutlined' },
+  '/': { title: '门户首页', icon: 'HomeOutlined' },
+  '/portal': { title: '门户首页', icon: 'HomeOutlined' },
   '/resources/enterprises': { title: '企业库', icon: 'BankOutlined', parent: '资源库' },
+  '/resources/enterprises/:id': { title: '企业详情', icon: 'BankOutlined', parent: '资源库 > 企业库' },
   '/resources/demands': { title: '需求库', icon: 'FileTextOutlined', parent: '资源库' },
+  '/resources/demands/:id': { title: '需求详情', icon: 'FileTextOutlined', parent: '资源库 > 需求库' },
   '/resources/products': { title: '产品库', icon: 'AppstoreOutlined', parent: '资源库' },
   '/resources/solutions': { title: '解决方案库', icon: 'BulbOutlined', parent: '资源库' },
   '/resources/experts': { title: '专家库', icon: 'UserOutlined', parent: '资源库' },
   '/insights/industry-overview': { title: '产业链概览', icon: 'PieChartOutlined', parent: '战略洞察' },
   '/insights/industry-map': { title: '产业链地图', icon: 'GlobalOutlined', parent: '战略洞察' },
   '/insights/industry-chain': { title: '产业链图谱', icon: 'NodeIndexOutlined', parent: '战略洞察' },
+  '/insights/industry-chain/:id': { title: '产业链详情', icon: 'NodeIndexOutlined', parent: '战略洞察 > 产业链图谱' },
   '/insights/enterprise-map': { title: '企业地图', icon: 'EnvironmentOutlined', parent: '战略洞察' },
   '/opportunities/supply-demand-map': { title: '供需地图', icon: 'GlobalOutlined', parent: '机会引擎' },
   '/admin/users': { title: '用户管理', icon: 'TeamOutlined', parent: '后台管理' },
-  '/admin/roles': { title: '角色管理', icon: 'SafetyOutlined', parent: '后台管理' }
+  '/admin/roles': { title: '角色管理', icon: 'SafetyOutlined', parent: '后台管理' },
+  '/auth/login': { title: '用户登录', icon: 'LoginOutlined' }
+}
+
+// 智能匹配菜单项的函数
+const findMenuItemByPath = (path: string): MenuConfig | null => {
+  // 首先尝试精确匹配
+  if (menuConfig[path]) {
+    return menuConfig[path]
+  }
+  
+  // 尝试动态路由匹配
+  for (const [configPath, menuItem] of Object.entries(menuConfig)) {
+    if (configPath.includes(':')) {
+      // 将动态路由模式转换为正则表达式
+      const regex = new RegExp('^' + configPath.replace(/:\w+/g, '[^/]+') + '$')
+      if (regex.test(path)) {
+        return menuItem
+      }
+    }
+  }
+  
+  // 尝试路径前缀匹配
+  const pathSegments = path.split('/').filter(Boolean)
+  
+  // 根据路径段数逐级匹配
+  for (let i = pathSegments.length; i > 0; i--) {
+    const testPath = '/' + pathSegments.slice(0, i).join('/')
+    if (menuConfig[testPath]) {
+      return menuConfig[testPath]
+    }
+  }
+  
+  // 根据路径特征智能推断
+  if (path.startsWith('/resources')) {
+    return { title: '资源库', icon: 'DatabaseOutlined', parent: '防爆产业数据中心' }
+  } else if (path.startsWith('/insights')) {
+    return { title: '战略洞察', icon: 'BarChartOutlined', parent: '防爆产业数据中心' }
+  } else if (path.startsWith('/opportunities')) {
+    return { title: '机会引擎', icon: 'RocketOutlined', parent: '防爆产业数据中心' }
+  } else if (path.startsWith('/admin')) {
+    return { title: '后台管理', icon: 'SettingOutlined', parent: '防爆产业数据中心' }
+  }
+  
+  return null
 }
 
 // 面包屑数据
 const breadcrumbItems = computed(() => {
   const currentPath = route.path
-  const menuItem = menuConfig[currentPath as keyof typeof menuConfig]
+  const menuItem = findMenuItemByPath(currentPath)
   
-  if (!menuItem) return [{ title: '防爆产业数据中心' }]
+  // 如果找不到匹配的菜单项，显示基础导航
+  if (!menuItem) {
+    return [{ title: '防爆产业数据中心' }, { title: '系统页面' }]
+  }
   
   const items = []
+  
+  // 添加根路径
+  items.push({ title: '防爆产业数据中心', path: '/' })
+  
+  // 处理父级路径（支持多级）
   if (menuItem.parent) {
-    items.push({ title: menuItem.parent })
+    const parentLevels = menuItem.parent.split(' > ')
+    parentLevels.forEach(parent => {
+      items.push({ title: parent })
+    })
   }
+  
+  // 添加当前页面
   items.push({ 
     title: menuItem.title, 
     path: currentPath,
