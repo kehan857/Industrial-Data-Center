@@ -264,7 +264,7 @@ const breadcrumbItems = computed(() => {
   const currentPath = route.path
   const menuItem = menuConfig[currentPath as keyof typeof menuConfig]
   
-  if (!menuItem) return [{ title: '未知页面' }]
+  if (!menuItem) return [{ title: '防爆产业数据中心' }]
   
   const items = []
   if (menuItem.parent) {
